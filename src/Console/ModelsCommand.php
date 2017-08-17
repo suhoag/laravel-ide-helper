@@ -335,7 +335,7 @@ class ModelsCommand extends Command
 
         if ($columns) {
             foreach ($columns as $column) {
-                $name = $column->getName();
+                $name = strtolower($column->getName());
                 if (in_array($name, $model->getDates())) {
                     $type = '\Carbon\Carbon';
                 } else {
